@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import NavBar from './components/Nav/NavBar';
 import ItemListContainer from './components/ItemListContainer';
+import ItemCount from './components/ItemCount';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div>
       <Header/>
       <ItemListContainer greeting= {productos} />
+      <ItemCount stock={5} initial={1} onAdd={0} />
     </div>
   );
 }
