@@ -7,14 +7,12 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import AppCartContext from './components/Context/Context';
 import Provider  from './components/Context/Context';
+import Cart from './components/Cart';
 
 
 function App() {
   
   return (
-    <div>
-      
-        
           <Provider>
             <BrowserRouter>
             <Header/>
@@ -22,12 +20,10 @@ function App() {
               <Route extact path="/" element={<ItemListContainer />}/>
               <Route extact path="/categoria/:condicion" element={<ItemListContainer />}/>
               <Route extact path="/producto/:id" element={<ItemDetailContainer />}/>
+              <Route extact path='/cart' element={<Cart/>}/>
             </Routes>
             </BrowserRouter> 
           </Provider>  
-        
-    
-    </div>
   );
 }
 

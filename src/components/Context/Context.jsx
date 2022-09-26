@@ -13,7 +13,7 @@ const Provider = (props) => {
     const addItem = (item , cantidad) =>{
         if(isInCart(item.id)){
             let producto = cart.find(x => x.id === item.id);
-            cart[cart.indexOf(producto)].cantidad += 1;
+            cart [cart.indexOf(producto)].cantidad += 1;
             setCart([...cart]);
             console.log(cart);
         }else {
@@ -30,17 +30,35 @@ const Provider = (props) => {
         setCart(filtrado);
 
     }
+    
+    const sumaTotal = ()=>{
+        const copia = [...cart];
+        let count = 0;
+        copia.forEach((producto) => {
+            count += (producto.cantidad*producto.precio);
+        });
+        return count;
+
+
+    };
+    
+    
 
     const isInCart = (id) =>{
         return cart.some(item =>item.id === id);
     }
     const cartTotal = () => {
-        return cart.reduce((total , item) => {total += item.cantidad}, 0)
+        const copia = [...cart];
+        let count = 0;
+        copia.forEach((producto) => {
+            count = count + producto.cantidad;
+        });
+        return count;
     }
     
     return(
         
-            <CartContext.Provider value={{cart, addItem, clear,isInCart, cartTotal,removeItem}}>
+            <CartContext.Provider value={{cart, addItem, clear,isInCart, cartTotal,removeItem,sumaTotal}}>
                 {props.children}
             </CartContext.Provider>
         
