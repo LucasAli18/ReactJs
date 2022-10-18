@@ -1,15 +1,16 @@
-.navbar {
+.navbar 
+{
     display : flex;
     padding : 10px;
-    background-color :#423737;
+    background-color: #fffbf2;
     margin-top : 15px;
-    
 }
 
 
-    .nav-link {
+.nav-link 
+{
         text-decoration:none;
-        color : #f1b800;
+        color: #ffb957;
         font-size : 27px;
-        font-family: 'Raleway', sans-serif;
-    }
+        font-family: 'Ubuntu', sans-serif;
+}

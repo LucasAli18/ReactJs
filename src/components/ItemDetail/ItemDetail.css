@@ -1,7 +1,6 @@
-.detail img {
-    width: 500px;
-}
-
-.detail{
+.detalle{
     border: 5px #000;
+}
+.detalle img {
+    width: 500px;
 }

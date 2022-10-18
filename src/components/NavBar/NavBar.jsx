@@ -5,10 +5,6 @@ import "./NavBar.css";
 
 
 const NavBar = () =>{
-    
-
-  
-    
     return (
 
 <nav className="navbar navbar-expand-lg">
@@ -32,7 +28,5 @@ const NavBar = () =>{
 </nav>
     )
 }
-
-
 
 export default NavBar;

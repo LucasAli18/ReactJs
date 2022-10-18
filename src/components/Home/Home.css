@@ -1,13 +1,33 @@
 .home__texto{
     margin-top: 10px;
-    color: #f1b800;
-    background-color: #423742;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: bisque;
+    background-color: black;
 }
 
 .home__img{
-    height: 738px;
-    width: 640px;
+    height: 500px;
+    width: 400px;
+}
+.home__img:hover
+{
+    opacity: .5;
+}
+.home__fondo{
+    position: relative;
+    right: 300px;
 }
 a{
     text-decoration: none;
+    font-family: 'PT Sans Narrow', sans-serif;
+    text-align: center;
+}
+
+.home__menu
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
 }

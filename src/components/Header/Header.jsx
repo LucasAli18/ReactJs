@@ -10,8 +10,7 @@ const Header = () => {
     return (
         <header className="row justify-content-between header ">
             <div className=" col-1">
-            <Link  to={"/"}><img  src={logo}  className="img-fluid"/></Link>
-                
+            <Link  to={"/"}><img  src={logo} alt="Logo CraftBeer" className="img-fluid"/></Link>            
             </div>
             <h1 className="  col-4 aling-items-center" >The CraftBeer</h1>
             <div className="col-1"></div>

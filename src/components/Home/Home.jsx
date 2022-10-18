@@ -1,9 +1,6 @@
 import React from "react";
-import fondo from "../img/fondo.webp";
+import fondo from "../img/fondoLatas.jpg";
 import {Link} from "react-router-dom";
-import cervezas from "../img/cervezas.webp";
-import promos from "../img/promos.webp";
-import contacto from "../img/contacto.webp";
 import "./Home.css";
 
 
@@ -12,15 +9,15 @@ const Home = () =>{
 
 
     return(
-        <div>
-            <img src={fondo} alt="fondo" className="mb-5" />
-            <div className="row d-flex">
-                <Link to="/tienda" className="col-4 "><img src={cervezas} alt="cervezas"className="home__img" /><p className="fs-1 text-center home__texto">Tienda</p></Link>
-                <Link to={"/categoria/promociones"} className="col-4"><img src={promos} alt="promo" className="home__img"/><p className="fs-1 text-center home__texto">Promociones</p></Link>
-                <Link to="/contacto" className="col-4"><img src={contacto} alt="contacto"className="home__img" /><p className="fs-1 text-center home__texto">Contacto</p></Link>
-            </div>
+        <section>
+            <img src={fondo} alt="fondo" className="mb-5 home__fondo" />
+            <article className="home__menu">
+                <Link to="/tienda" className="col-4 "><p className="fs-1 text-center home__texto">Tienda</p><img src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/201/642/products/packs_16_septiembre-011-655b75c3c37b448d2816633604672334-640-0.png" alt="cervezas"className="home__img" /></Link>
+                <Link to={"/categoria/promociones"} className="col-4"><p className="fs-1 text-center home__texto">Promos</p><img src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/201/642/products/2-agosto-22-2mesa-de-trabajo-11-2d54d049918531ffbd16594537507822-640-0.jpg" alt="promo" className="home__img"/></Link>
+                <Link to="/contacto" className="col-4"><p className="fs-1 text-center home__texto">Contacto</p><img src="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/201/642/products/copa-ipa2-amb1-9bebfddc1d829dc69f16273087759911-640-0.jpg" alt="contacto"className="home__img" /></Link>
+            </article>
         
-        </div>
+        </section>
     )
 }
 

@@ -1,64 +1,55 @@
-import React, { Children } from "react";
+import React from "react";
 import { useState } from "react";
 import { createContext } from "react";
-
 
 export const CartContext = createContext();
 
 const Provider = (props) => {
     
     const [cart, setCart] = useState([]);
-    
-    
     const addItem = (item , cantidad) =>{
-        if(isInCart(item.id)){
+        if(enElCarrito(item.id)){
             let producto = cart.find(x => x.id === item.id);
-            cart [cart.indexOf(producto)].cantidad += 1;
+            cart[cart.indexOf(producto)].cantidad += 1;
             setCart([...cart]);
             console.log(cart);
         }else {
-            setCart([...cart, {...item, cantidad:cantidad }]);
-            
+            setCart([...cart, {...item, cantidad:cantidad }]);          
         }
-    }
-    
-    const clear = () =>{
+    } 
+    const clear = () =>
+    {
         setCart([]);
     }
-    const removeItem = (id) =>{
-        const filtrado = cart.filter((prod) =>prod.id !== id)
-        setCart(filtrado);
-
+    const removeItem = (id) =>
+    {
+        const expulsado = cart.filter((prod) =>prod.id !== id)
+        setCart(expulsado);
     }
-    
-    const sumaTotal = ()=>{
+    const sumaTotal = ()=>
+    {
         const copia = [...cart];
-        let count = 0;
+        let contador = 0;
         copia.forEach((producto) => {
-            count += (producto.cantidad*producto.precio);
+            contador += (producto.cantidad * producto.precio);
         });
-        return count;
-
-
+        return contador;
     };
-    
-    
-
-    const isInCart = (id) =>{
+    const enElCarrito = (id) =>{
         return cart.some(item =>item.id === id);
     }
     const cartTotal = () => {
         const copia = [...cart];
-        let count = 0;
+        let contador = 0;
         copia.forEach((producto) => {
-            count = count + producto.cantidad;
+            contador = contador + producto.cantidad;
         });
-        return count;
+        return contador;
     }
     
     return(
         
-            <CartContext.Provider value={{cart, addItem, clear,isInCart, cartTotal,removeItem,sumaTotal}}>
+            <CartContext.Provider value={{cart, addItem, clear,enElCarrito, cartTotal,removeItem,sumaTotal}}>
                 {props.children}
             </CartContext.Provider>
         

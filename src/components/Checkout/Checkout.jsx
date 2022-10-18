@@ -19,7 +19,9 @@ const Checkout = () =>{
     const [orderId, setOrderId] = useState("");
 
     const sendOrder = () => {
-        if ((nombre !== "") && (email !== "") && (telefono !== "")) {
+        //Verificamos que el usuario complete los datos solicitados
+        if ((nombre !== "") && (email !== "") && (telefono !== ""))
+        {
             const buyer = {name:nombre, email:email, phone:telefono};
             const items = [];
             cart.forEach(item => {
@@ -45,33 +47,33 @@ const Checkout = () =>{
             <div className="row d-flex justify-content-around">
             <form  className="col-4 m-5">
                     <div className="mb-3">
-                        <input type="text" className="form-control" id="nombre"  placeholder="Ingrese su Nombre" onInput={(e) => setNombre(e.target.value)}/>
+                        <input type="text" className="form-control" id="nombre" required placeholder="Ingrese su Nombre" onInput={(e) => setNombre(e.target.value)}/>
                     </div>
                     <div className="mb-3">
-                        <input type="email" className="form-control" id="email"  placeholder="Ingrese su Email" onInput={(e) => setEmail(e.target.value)}/>
+                        <input type="email" className="form-control" id="email" required placeholder="Ingrese su Email" onInput={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div className="mb-3">
                         <input type="text" className="form-control" id="telefono"  placeholder="Ingrese su Telefono" onInput={(e) => setTelefono(e.target.value)}/>
                     </div>
-                    <button type="button" className="btn btn-warning" onClick={() => {sendOrder()}}>Finalizar</button>
+                    <button type="button" className="btn" onClick={() => {sendOrder()}}>Finalizar</button>
             </form>
             <div className="col-5">
-                {cart.map(item => <div className="d-flex  justify-content-around align-items-center" key={item.id}>
+                {cart.map(item => <div className="d-flex justify-content-around align-items-center" key={item.id}>
                 <img src={item.img} alt={item.nombre} width="200px" />
                 <div className="d-flex flex-column justify-content-center">
                     <p className="text-center">{item.nombre} x {item.cantidad}</p>
                     <p>Sub Total : ${ item.precio * item.cantidad}</p>
                 </div>
-                <button type="button" class="btn btn-danger trash" onClick={()=> removeItem(item.id)}><span className="material-symbols-outlined">delete</span></button>
+                <button type="button" className="btn" onClick={()=> removeItem(item.id)}><span className="material-symbols-outlined">Borrar</span></button>
             </div> )}
             <p className="text-center fs-3 total">Total : ${total}</p>
             </div>
             </div> 
-            : orderId !== "" ? <Success id={orderId} /> 
-            : <div className="d-flex flex-column justify-content-center align-items-center"><div className="alert alert-danger text-center m-5" role="alert">No se encontraron Productos!</div><Link to="/"><input type="button " className="btn btn-success remove" value="Volver a la Tienda"  readOnly /></Link ></div>
-        }
+                : orderId !== "" ? <Success id={orderId} /> 
+                : <div className="d-flex flex-column justify-content-center align-items-center"><div className="alert alert-danger text-center m-5" role="alert">No se encontraron Productos!</div><Link to="/tienda"><input type="button " className="btn remove" value="Volver a la Tienda"  readOnly /></Link ></div>
+                }
             
-        </div>
+            </div>
         
     )
 }

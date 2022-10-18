@@ -1,20 +1,18 @@
 .btn{
-    background-color :#423737;
-    color :#F1B800;
+    background-color :#111111;
+    color :#fff9e3;
     font-size: 16px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif;
     font-weight: 500;
     
 }
 p{
-    font-size: 16px;
-    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    font-family: 'PT Sans Narrow', sans-serif;
     font-weight: 800;
 }
 
 .remove{
-    background-color:#F1B800;
-    color :#423737;
-    
-    
+    background-color :#111111;
+    color :#fff9e3;
 }
