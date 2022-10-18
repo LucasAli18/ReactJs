@@ -14,7 +14,7 @@ const ItemDetail= ({item}) =>{
 
         const onAdd = (item, counter) =>{
             setCounter(counter);
-            addItem(item,counter);
+            addItem(item, counter);
         }
 
     return (
